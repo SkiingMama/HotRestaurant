@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<link href="images/favicon.ico" rel="icon" type="image/x-icon" />
 	<title>Hot Restaurant</title>
 	<!-- Bootstrap -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -12,12 +13,18 @@
 <body>
 	<div class="container">
 		<div class="jumbotron">
-			<h1>Hot Restaurant</h1>
+			<h1 class="text-center">Hot Restaurant</h1>
 			<hr>
-			<h3>We only have 5 tables! Book your seat before they are all gone!</h3>
-			<button>View Tables</button>
-			<button>Make Reservation</button>
+			<h3 class="text-center">We only have 5 tables! Book your seat before they are all gone!</h3>
+			<div class="text-center">
+				<a href="/tables.html"><button type="button" class="btn btn-lg btn-info">View Tables</button></a>
+				<a href="/reserve.html"><button type="button" class="btn btn-lg btn-primary">Make Reservation</button></a>	
+			</div>
+
 		</div>
+
+		<footer><p><a href="">API Table Link</a> | <a href="">API Waitlist</a></p></footer>
+
 	</div>
 </body>
 </html>
