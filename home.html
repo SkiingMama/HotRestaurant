@@ -4,27 +4,114 @@
 	<link href="images/favicon.ico" rel="icon" type="image/x-icon" />
 	<title>Hot Restaurant</title>
 	<!-- Bootstrap -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<!-- JQuery -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 
-<body>
+<!-- white brick -->
+<body  background="images/brickwall/brickwall_@2X.png">
+
+	<nav class="navbar navbar-inverse">
+	  <ul class="nav navbar-nav">
+	    <li><a href="home.html" class="glyphicon glyphicon-home"></a></li>
+	  </ul>
+
+	  <ul class="nav navbar-right">
+	  	<div class="btn-group" role="group">
+  			<a href="/tables.html"><button type="button" id="tables" class="btn btn-sm btn-secondary navbar-btn">View Tables</button></a>
+  			<a href="/reserve.html"><button type="button" id="reservations" class="btn btn-sm btn-secondary navbar-btn" style="margin-right: 25px">Make a Reservation</button></a>
+	  	</div>
+	  </ul>
+	</nav>
+
 	<div class="container">
 		<div class="jumbotron">
-			<h1 class="text-center">Hot Restaurant</h1>
-			<hr>
+			<div id="foodCarousel" class="carousel slide" data-ride="carousel" style="width: 100%; opacity: .7">
+				<!-- Indicators -->
+				<ol class="carousel-indicators">
+					<li data-target="#foodCarousel" data-slide-to="0" class="active"></li>
+					<li data-target="#foodCarousel" data-slide-to="1"></li>
+					<li data-target="#foodCarousel" data-slide-to="2"></li>
+				</ol>
+
+				<!-- Wrapper for slides -->
+				<div class="carousel-inner" role="listbox">
+
+					<div class="item active">
+						<img src="images/veggies.jpg" alt="fresh veggies">
+						<div class="carousel-caption">
+							<h1 class="text-center">Hot Restaurant</h1>
+						</div>
+					</div>
+
+					<div class="item">
+						<img src="images/grill.jpg" alt="grilled food">
+						<div class="carousel-caption">
+							<h1 class="text-center">Hot Restaurant</h1>
+						</div>
+					</div>
+
+					<div class="item">
+						<img src="images/sushi.jpg" alt="sushi bowl">
+						<div class="carousel-caption">
+							<h1 class="text-center">Hot Restaurant</h1>
+						</div>
+					</div>
+				</div>
+		
+				<!-- Controls -->
+				<a class="left carousel-control" href="#carousel" role="button" data-slide="prev">
+					<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+					<span class="sr-only">Previous</span>
+				</a>
+				<a class="right carousel-control" href="#carousel" role="button" data-slide="next">
+					<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+					<span class="sr-only">Next</span>
+				</a>
+			</div>
+
 			<h3 class="text-center">We only have 5 tables! Book your seat before they are all gone!</h3>
 			<div class="text-center">
-				<a href="/tables.html"><button type="button" class="btn btn-lg btn-info">View Tables</button></a>
-				<a href="/reserve.html"><button type="button" class="btn btn-lg btn-primary">Make Reservation</button></a>	
+				<a href="/reserve.html"><button type="button" class="btn btn-lg btn-danger">Make Reservation</button></a>
 			</div>
 
 		</div>
 
-		<footer><p><a href="">API Table Link</a> | <a href="">API Waitlist</a></p></footer>
+		<footer class="footer">
+			<div class="container">
+					<a href="">API Table Link</a> | <a href="">API Waitlist</a>
+			</div>
+		</footer>
 
 	</div>
+
+<script>
+$(document).ready(function(){
+    // Activate Carousel
+    $("#foodCarousel").carousel({interval: 500});
+    
+    // Enable Carousel Indicators
+    $(".item1").click(function(){
+        $("#foodCarousel").carousel(0);
+    });
+    $(".item2").click(function(){
+        $("#foodCarousel").carousel(1);
+    });
+    $(".item3").click(function(){
+        $("#foodCarousel").carousel(2);
+    });
+    
+    // Enable Carousel Controls
+    $(".left").click(function(){
+        $("#foodCarousel").carousel("prev");
+    });
+    $(".right").click(function(){
+        $("#foodCarousel").carousel("next");
+    });
+});
+</script>
+
 </body>
 </html>
