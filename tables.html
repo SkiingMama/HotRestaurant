@@ -4,10 +4,11 @@
 	<link href="images/favicon.ico" rel="icon" type="image/x-icon" />
 	<title>View Tables</title>
 	<!-- Bootstrap -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"</script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 	<!-- JQuery -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
 </head>
 
 <body background="images/brickwall/brickwall_@2X.png">
@@ -49,7 +50,32 @@
 		</div>
 
 		<p><a href="Clear Table"</a> | <a href="">API Table Link</a> | <a href="">API Waitlist</a></p>
+		<script type ="text/javascript">
 
+
+	    // Question: What does this code do??
+	    $.get("/api/tables")
+	    .then(function(data) {
+	      console.log(data);
+				for (var i = 0; i < data.length; i++)
+				if (data) {
+          $(".panel-body").show(data);
+					$(".panel-body").append(data[i].name);
+					$(".panel-body").append(data)
+
+          //$("#name").text(data.name);
+        //  $("#number").text(data.number);
+          //$("#email").text(data.email);
+        //  $("#unique").text(data.unique);
+        }
+        else {
+          $("#name").text("The force is not strong with this one. Your character was not found.");
+          $("#stats").hide();
+        }
+	      //alert("Adding Reservationss...");
+	    });
+
+		</script>
 	</div>
 </body>
 </html>

@@ -42,11 +42,11 @@ app.get('/tables', function(req, res) {
 	// for(var i = 0; i < reservationArray.length; i++) {
 	// 	return res.json(reservationArray[1]);
 	// }
-	return res.json(reservationArray);
+	// return res.json(reservationArray);
 
 });
 
-app.post("/reserve", function(req, res) {
+app.post("/newreservation", function(req, res) {
 	var newReservation = req.body;
 
 	console.log(newReservation)
@@ -65,7 +65,7 @@ app.post("/reserve", function(req, res) {
 app.get('/api/tables', function (req, res) {
   // console.log('table data requested');
   // var response = "testing";
-  res.json(tables);
+  res.json(reservationArray);
 });
 
 // reserve API call
@@ -84,6 +84,7 @@ app.post('/api/reserve', function (req, res) {
 	} else {
 		waitingListArray.push(tableReservation)
 	}
+  console.log(reservationArray)
 });
 
 
@@ -93,4 +94,3 @@ app.post('/api/reserve', function (req, res) {
 app.listen(PORT, function () {
 	console.log('App listening on PORT ' + PORT);
 });
-
